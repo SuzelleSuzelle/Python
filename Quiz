@@ -1,0 +1,71 @@
+def run_quiz(questions):
+    score = 0
+    for i, q in enumerate(questions, start=1):
+        print(f"\nQuestion {i}: {q['question']}")
+        for option in q['options']:
+            print(option)
+        answer = input("Your answer (A/B/C/D): ").strip().upper()
+        if answer == q['correct']:
+            print("✅ Correct!")
+            score += 1
+        else:
+            print(f"❌ Wrong! The correct answer was {q['correct']}")
+    print(f"\n🎉 You scored {score} out of {len(questions)}!")
+
+def main():
+    questions = [
+        {
+            "question": "What is the capital of France?",
+            "options": ["A. Madrid", "B. Berlin", "C. Paris", "D. Rome"],
+            "correct": "C"
+        },
+        {
+            "question": "Which planet is known as the Red Planet?",
+            "options": ["A. Earth", "B. Mars", "C. Venus", "D. Jupiter"],
+            "correct": "B"
+        },
+        {
+            "question": "What is the chemical symbol for water?",
+            "options": ["A. H2O", "B. CO2", "C. O2", "D. NaCl"],
+            "correct": "A"
+        },
+        {
+            "question": "Who wrote 'Romeo and Juliet'?",
+            "options": ["A. Charles Dickens", "B. William Shakespeare", "C. Jane Austen", "D. Mark Twain"],
+            "correct": "B"
+        },
+        {
+            "question": "Which continent is the largest?",
+            "options": ["A. Africa", "B. Europe", "C. Asia", "D. Antarctica"],
+            "correct": "C"
+        },
+        {
+            "question": "What is the speed of light?",
+            "options": ["A. 300,000 km/s", "B. 150,000 km/s", "C. 1,000 km/s", "D. 10,000 km/s"],
+            "correct": "A"
+        },
+        {
+            "question": "Which animal is known as the King of the Jungle?",
+            "options": ["A. Elephant", "B. Tiger", "C. Lion", "D. Gorilla"],
+            "correct": "C"
+        },
+        {
+            "question": "What language is primarily spoken in Brazil?",
+            "options": ["A. Spanish", "B. Portuguese", "C. French", "D. English"],
+            "correct": "B"
+        },
+        {
+            "question": "What is 9 x 8?",
+            "options": ["A. 72", "B. 81", "C. 64", "D. 69"],
+            "correct": "A"
+        },
+        {
+            "question": "Who painted the Mona Lisa?",
+            "options": ["A. Michelangelo", "B. Vincent van Gogh", "C. Pablo Picasso", "D. Leonardo da Vinci"],
+            "correct": "D"
+        }
+    ]
+    run_quiz(questions)
+
+if __name__ == "__main__":
+    main()
